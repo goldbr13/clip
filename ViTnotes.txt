@@ -1,0 +1,11 @@
+Sat Mar 18 10:15:03 PM EDT 2023
+
+ViT models must be scripted and not traced using jit.script()
+
+Using Git LFS for .pt storage
+
+One issue was the size of the app with ViT_b_16
+
+Chose ViT_b_16 due to it being of a smaller size (16 vs 32 and b vs l)
+
+Works with ImageNet1K classes 
