@@ -78,7 +78,9 @@ public class MainActivity extends AppCompatActivity {
                     bitmap = Bitmap.createScaledBitmap(bitmap, 400, 400, true);
 
                     //Loading the model file.
-                    module = Module.load(fetchModelFile(MainActivity.this, "ViT_b_16_script.pt"));
+                    System.out.println("A");
+                    module = Module.load(fetchModelFile(MainActivity.this, "CLIP_CIFAR.pt"));
+                    System.out.println("B");
                 } catch (IOException e) {
                     finish();
                 }
@@ -99,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 if(module == null){
                     System.out.println("Module null");
                 }
-                final Tensor output = module.forward(IValue.from(input)).toTensor();
+               /* final Tensor output = module.forward(IValue.from(input)).toTensor();
 
 
                 final float[] score_arr = output.getDataAsFloatArray();
@@ -119,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //Writing the detected class in to the text view of the layout
                 TextView textView = findViewById(R.id.result_text);
-                textView.setText(detected_class);
+                textView.setText(detected_class);*/
 
 
             }

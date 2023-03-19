@@ -1,0 +1,22 @@
+Sat Mar 18 10:15:03 PM EDT 2023
+
+ViT models must be scripted and not traced using jit.script()
+
+Using Git LFS for .pt storage
+
+One issue was the size of the app with ViT_b_16
+
+Chose ViT_b_16 due to it being of a smaller size (16 vs 32 and b vs l)
+
+Works with ImageNet1K classes 
+Sun Mar 19 01:40:29 PM EDT 2023
+
+Working with CLIP itslef now.
+
+CLIP is easier to use through the OpenAI API. This still requires some Android stuff, namely adding dependencies to Gradle.
+
+HuggingFace CLIP model needs kwargs for the forward pass, which is basically incompatible with jit.trace() or jit.script(). OpenAI CLIP model does not do this.
+
+Had to make sure that the Gradle PyTroch versions matched that on my Linux machine
+
+Looked through different sized base models. Smallest was RN50, ViT models seems a bit too large, but I might be able to squeeze them in,
